@@ -4,7 +4,7 @@
     <input type="text" #textBox [(ngModel)]="slug" />
   </label>
 
-  <button (click)="onClick(textBox.value)">Generate</button>
+  <button (click)="onClick(textBox.value)">Add</button>
 </div>
 <div class="loading-indicator" *ngIf="isLoading">
   Loading
@@ -25,7 +25,7 @@
         [attr.fill]="node.data.color"
       />
       <svg:title>
-        {{ node.label }}
+        {{ node.label }} &#xA; {{ node.id }}
       </svg:title>
     </svg:g>
   </ng-template>
