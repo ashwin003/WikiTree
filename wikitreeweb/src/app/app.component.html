@@ -1,0 +1,32 @@
+<div class="search-box">
+  <label>
+    https://en.wikipedia.org/wiki/
+    <input type="text" #textBox [(ngModel)]="slug" />
+  </label>
+
+  <button (click)="onClick(textBox.value)">Generate</button>
+</div>
+<div class="loading-indicator" *ngIf="isLoading">
+  Loading
+</div>
+<ngx-graph
+  class="chart-container"
+  [view]="[width, height]"
+  [links]="links"
+  [nodes]="nodes"
+  (select)="onNodeSelect($event)"
+  [zoomToFit$]="zoomToFit$"
+>
+  <ng-template #nodeTemplate let-node>
+    <svg:g class="node">
+      <svg:rect
+        [attr.width]="node.dimension.width"
+        [attr.height]="node.dimension.height"
+        [attr.fill]="node.data.color"
+      />
+      <svg:title>
+        {{ node.label }}
+      </svg:title>
+    </svg:g>
+  </ng-template>
+</ngx-graph>

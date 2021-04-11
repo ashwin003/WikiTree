@@ -1,0 +1,29 @@
+@import "../colors.scss";
+
+.search-box {
+  place-items: center;
+}
+
+.loading-indicator {
+  font-weight: bold;
+}
+
+input,
+button {
+  outline: none;
+  border: 0;
+  color: $main-color;
+
+  &:focus {
+    border: 0;
+    outline: none;
+  }
+}
+button {
+  text-transform: uppercase;
+  font-weight: bold;
+
+  &:not(:disabled) {
+    cursor: pointer;
+  }
+}

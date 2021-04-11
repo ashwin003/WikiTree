@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+@import "./colors.scss";
+
+body {
+    width: 100vw;
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
+    background-color: $main-bg;
+    color: $main-color;
+    display: grid;
+    place-items: center;
+    overflow-x: hidden;
+    font-family: sans-serif;
+}
